@@ -1,10 +1,8 @@
-# Magisk Changelog
-
-### v28.0
+28.0
 
 - [General] Support 16k page size
 - [General] Add basic support for RISC-V (not built in releases)
-- [General] Use a minimal libc to build static executables (`magiskinit` and `magiskboot`) for smaller sizes
+- [General] Use a minimal libc to build static executables ) for smaller sizes
 - [Core] Remove unnecessary mirror for magic mount
 - [Core] Update boot image detection logic to support more devices
 - [MagiskInit] Rewrite 2SI logic for injecting `magiskinit` as `init`
@@ -19,7 +17,7 @@
 - [App] Support patching Samsung firmware with images larger than 8GiB
 - [App] Use user-initiated job instead of foreground services on Android 14
 - [App] Support Android 13+ built-in per-app language preferences
-- [App] Add `action.sh` support to allow modules to define an action triggered from UI
+- [App] Addbsupport to allow modules to define an action triggered from UI
 - [MagiskBoot] Support spliting kernel images without decompression
 - [MagiskBoot] Properly support vendor boot images
 - [MagiskBoot] Disable Samsung PROCA from kernel image
@@ -29,14 +27,14 @@
 - [Zygisk] Introduce new code injection mechanism
 - [Zygisk] Support new signature introduced in U QPR2
 - [SEPolicy] Update libsepol to properly set some policy config bits
-- [MagiskBoot] Support compressing `init` so Magisk is installable on devices with small boot partitions
+- [MagiskBoot] Support compressing so Magisk is installable on devices with small boot partitions
 - [ResetProp] Add new wait for property feature `resetprop -w`
 
 ### v26.4
 
 - [MagiskBoot] Don't pad zeros if signed boot image is larger
-- [MagiskPolicy] Fix `genfscon` and `filename_trans`
-- [MagiskPolicy] Fix bug in `libsepol`
+- [MagiskPolicy] Fix
+- [MagiskPolicy] Fix bug in 
 - [Zygisk] Fix and simplify file descriptor sanitization logic
 - [App] Prevent OOM when patching AP tarfiles
 - [App] Fix bug in device configuration detection
@@ -52,7 +50,7 @@
 
 ### v26.2
 
-- [MagiskBoot] Support extracting boot image from `payload.bin`
+- [MagiskBoot] Support boot image from `payload
 - [MagiskBoot] Support cpio files containing character files
 - [MagiskBoot] Support listing cpio content
 - [MagiskBoot] Directly handle AVB 1.0 signing and verification without going through Java implementation
@@ -60,34 +58,34 @@
 - [resetprop] Support printing property context
 - [resetprop] Support only printing persistent properties from storage
 - [resetprop] Properly support setting persistent properties bypassing property_service
-- [MagiskSU] Support `-g` and `-G` options
-- [MagiskSU] Support switching mount namespace to PID with `-t`
+- [MagiskSU] Support and  options
+- [MagiskSU] Support switching mount namespace to PID with `
 - [MagiskPolicy] Fix patching extended permissions
 - [MagiskPolicy] Support more syntax for extended permissions
 - [MagiskPolicy] Support printing out the loaded sepolicy rules
 - [App] Support patching boot image from ROM zips
-- [App] Properly preserve `boot.img` when patching Samsung firmware with `init_boot.img`
+- [App] Properly preserve when patching Samsung firmware with `init_boot
 
 ### v26.1
 
 - [App] Fix crashing when revoking root permissions
-- [MagiskInit] Always prefer `ext4` partitions over `f2fs` when selecting the pre-init partition
+- [MagiskInit] Always prefer partitions over when selecting the pre-init partition
 - [General] Restore module files' context/owner/group from mirror. This is a regression introduced in v26.0
 
 ### v26.0
 
 - [General] Bump minimum supported Android version to Android 6.0
-- [General] New magic mount backend. It supports loading modules into system with `overlayfs` files injected
+- [General] New magic mount backend. It supports loading modules into system with files injected
 - [Zygisk] Release new API version 4
 - [Zygisk] Prevent crashing daemon in error
 - [Zygisk] Rewrite zygote code injection with new loader library approach
 - [Zygisk] Rewrite code unloading implementation
 - [MagiskBoot] Support amonet microloader devices
 - [MagiskBoot] Always use lz4_legacy compression on v4 boot images. This fixes boot image patching issues on Android U preview.
-- [MagiskInit] Support replacing existing \*.rc files in `overlay.d`
+- [MagiskInit] Support replacing existing \*.rc files in `o
 - [MagiskInit] Rewrite sepolicy.rules mounting and loading implementation
 - [App] Make stub patching 100% offline
-- [App] Support patching `init_boot.img` for Samsung ODIN firmware
+- [App] Support patching for Samsung ODIN firmware
 - [MagiskPolicy] Fix minor bug in command line argument parsing
 - [MagiskPolicy] Update rules to support Android U
 
@@ -106,19 +104,19 @@
 - [Zygisk] Change binary hijack paths
 - [App] Fix incorrect recovery mode detection and installation
 - [MagiskInit] Fix config not properly exported in legacy SAR devices
-- [General] Enforce the Magisk app to always match or be newer than `magiskd`
+- [General] Enforce the Magisk app to always match or be newer than 
 
 ### v25.0
 
 - [MagiskInit] Update 2SI implementation, significantly increase device compatibility (e.g. Sony Xperia devices)
-- [MagiskInit] Introduce new `sepolicy` injection mechanism
+- [MagiskInit] Introduce new injection mechanism
 - [MagiskInit] Support Oculus Go
 - [MagiskInit] Support Android 13 GKIs (Pixel 6)
 - [MagiskBoot] Fix vbmeta extraction implementation
 - [App] Fix stub app on older Android versions
-- [App] [MagiskSU] Properly support apps using `sharedUserId`
-- [MagiskSU] Fix a possible crash in `magiskd`
-- [MagiskSU] Prune unused UIDs as soon as `system_server` restarts to prevent UID reuse attacks
+- [App] [MagiskSU] Properly support apps using 
+- [MagiskSU] Fix a possible crash in 
+- [MagiskSU] Prune unused UIDs as soon as restarts to prevent UID reuse attacks
 - [MagiskSU] Verify and enforce the installed Magisk app's certificate to match the distributor's signature
 - [MagiskSU] [Zygisk] Proper package management and detection
 - [Zygisk] Fix function hooking on devices running Android 12 with old kernels
@@ -128,23 +126,23 @@
 
 ### v24.3
 
-- [General] Stop using `getrandom` syscall
-- [Zygisk] Update API to v3, adding new fields to `AppSpecializeArgs`
+- [General] Stop using syscall
+- [Zygisk] Update API to v3, adding new fields to 
 - [App] Improve app repackaging installation workflow
 
 ### v24.2
 
 - [MagiskSU] Fix buffer overflow
 - [MagiskSU] Fix owner managed multiuser superuser settings
-- [MagiskSU] Fix command logging when using `su -c <cmd>`
+- [MagiskSU] Fix command logging when using 
 - [MagiskSU] Prevent su request indefinite blocking
-- [MagiskBoot] Support `lz4_legacy` archive with multiple magic
-- [MagiskBoot] Fix `lz4_lg` compression
+- [MagiskBoot] Support archive with multiple magic
+- [MagiskBoot] Fix compression
 - [DenyList] Allow targeting processes running as system UID
 - [Zygisk] Workaround Samsung's "early zygote"
 - [Zygisk] Improved Zygisk loading mechanism
 - [Zygisk] Fix application UID tracking
-- [Zygisk] Fix improper `umask` being set in zygote
+- [Zygisk] Fix improper being set in zygote
 - [App] Fix BusyBox execution test
 - [App] Improve stub loading mechanism
 - [App] Major app upgrade flow improvements
@@ -164,15 +162,15 @@
 - [Zygisk] Introduce DenyList feature to revert Magisk features in user selected processes
 - [MagiskBoot] Support patching 32-bit kernel zImages
 - [MagiskBoot] Support boot image header v4
-- [MagiskBoot] Support patching out `skip_initramfs` from dtb bootargs
-- [MagiskBoot] Add new env variable `PATCHVBMETAFLAG` to configure whether vbmeta flags should be patched
-- [MagiskInit] Support loading fstab from `/system/etc` (required for Pixel 6)
-- [MagiskInit] Support `/proc/bootconfig` for loading boot configurations
+- [MagiskBoot] Support patching out from dtb bootargs
+- [MagiskBoot] Add new env variable to configure whether vbmeta flags should be patched
+- [MagiskInit] Support loading fstab from ` (required for Pixel 6)
+- [MagiskInit] Support  for loading boot configurations
 - [MagiskInit] Better support for some Meizu devices
 - [MagiskInit] Better support for some OnePlus/Oppo/Realme devices
-- [MagiskInit] Support `init.real` on some Sony devices
+- [MagiskInit] Support ` on some Sony devices
 - [MagiskInit] Skip loading Magisk when detecting DSU
-- [MagiskPolicy] Load `*_compat_cil_file` from system_ext
+- [MagiskPolicy] Load` from system_ext
 - [MagiskSU] Use isolated devpts if the kernel supports it
 - [MagiskSU] Fix root shell if isolated mount namespace is set
 - [resetprop] Deleted properties are now wiped from memory instead of just unlinking
@@ -192,7 +190,7 @@
 - [General] Remove all pre Android 5.0 support
 - [General] Update BusyBox to use proper libc
 - [General] Fix C++ undefined behaviors
-- [General] Several `sepolicy.rule` copy/installation fixes
+- [General] Several copy/installation fixes
 - [MagiskPolicy] Remove unnecessary sepolicy rules
 - [MagiskHide] Update package and process name validation logic
 - [MagiskHide] Some changes that prevents zygote deadlock
@@ -209,8 +207,8 @@
 - [MagiskBoot] Preserve and patch AVB 2.0 structures/headers in boot images
 - [MagiskBoot] Properly strip out data encryption flags
 - [MagiskBoot] Prevent possible integer overflow
-- [MagiskInit] Fix `sepolicy.rule` mounting strategy
-- [resetprop] Always delete existing `ro.` props before updating. This will fix bootloops that could be caused by modifying device fingerprint properties.
+- [MagiskInit] Fix  mounting strategy
+- [resetprop] Always delete existing props before updating. This will fix bootloops that could be caused by modifying device fingerprint properties.
 
 ### v22.0
 
@@ -220,39 +218,39 @@
 - [App] Disallow re-packaging the Magisk app on devices lower than Android 5.0
 - [App] Detect and warn about multiple invalid states and provide instructions on how to resolve it
 - [MagiskHide] Fix a bug when stopping MagiskHide does not take effect
-- [MagiskBoot] Fix bug when unpacking `lz4_lg` compressed boot images
+- [MagiskBoot] Fix bug when unpacking compressed boot images
 - [MagiskInit] Support Galaxy S21 series
-- [MagiskSU] Fix incorrect APEX paths that caused `libsqlite.so` fail to load
+- [MagiskSU] Fix incorrect APEX paths that caused fail to load
 
 ### v21.4
 
-- [MagiskSU] Fix `su -c` behavior that broke many root apps
-- [General] Properly handle read/write over sockets (the `broken pipe` issue)
+- [MagiskSU] Fix behavior that broke many root apps
+- [General] Properly handle read/write over sockets (the issue)
 
 ### v21.3
 
-- [MagiskInit] Avoid mounting `f2fs` userdata as it may result in kernel crashes. This shall fix a lot of bootloops
-- [MagiskBoot] Fix a minor header checksum bug for `DHTB` header and ASUS `blob` image formats
+- [MagiskInit] Avoid mounting userdata as it may result in kernel crashes. This shall fix a lot of bootloops
+- [MagiskBoot] Fix a minor header checksum bug for `DHTB` header and ASUS ` image formats
 - [MagiskHide] Allowing hiding isolated processes if the mount namespace is separated
 
 ### v21.2
 
-- [MagiskInit] Detect 2SI after mounting `system_root` on legacy SAR devices
-- [General] Make sure `post-fs-data` scripts cannot block more than 35 seconds
-- [General] Fix the `magisk --install-module` command
+- [MagiskInit] Detect 2SI after mounting on legacy SAR devices
+- [General] Make sure scripts cannot block more than 35 seconds
+- [General] Fix the `magisk command
 - [General] Trim Windows newline when reading files
-- [General] Directly log to file to prevent `logcat` weirdness
+- [General] Directly log to file to prevent weirdness
 - [MagiskBoot] Fix header dump/load for header v3 images
 
 ### v21.1
 
 - [MagiskBoot] Support boot header v3 (Pixel 5 and 4a 5G)
-- [MagiskBoot] Distinguish `lz4_lg` and `lz4_legacy` (Pixel 5 and 4a 5G)
+- [MagiskBoot] Distinguish  and  (Pixel 5 and 4a 5G)
 - [MagiskBoot] Support vendor boot images (for dev, not relevant for Magisk installation)
-- [MagiskInit] Support kernel cmdline `androidboot.fstab_suffix`
+- [MagiskInit] Support kernel 
 - [MagiskInit] Support kernel initialized dm-verity on legacy SAR
 - [General] Significantly broaden sepolicy.rule compatibility
-- [General] Add Magisk binaries to `PATH` when executing boot scripts
+- [General] Add Magisk binaries to ` when executing boot scripts
 - [General] Update `--remove-modules` command implementation
 - [General] Make Magisk properly survive after factory reset on Android 11
 - [MagiskSU] Add APEX package `com.android.i18n` to `LD_LIBRARY_PATH` when linking `libsqlite.so`
@@ -807,27 +805,7 @@
 - Mods are now installed independently in their own subfolder. This paves the way for future Magisk Manager versions to manage mods, **just like how Xposed Modules are handled**
 - Support small boot partition devices (Huawei devices)
 - Use minimal sepolicy patch in boot image for smaller ramdisk size. Live patch policies after bootup
-- Include updated open source sepolicy injection tool (source code available), support nearly all SuperSU supolicy tool's functionality
-
-### v3
-
-- Fix bootimg-extract for Exynos Samsung devices (thanks to @phhusson), should fix all Samsung device issues
-- Add supolicy back to patch sepolicy (stock Samsung do not accept permissive domain)
-- Update sepolicy-injection to patch su domain for Samsung devices to use phh's root
-- Update root disable method, using more aggressive approach
-- Use lazy unmount to unmount root from system, should fix some issues with custom roms
-- Use the highest possible compression rate for ramdisk, hope to fix some devices with no boot partition space
-- Detect boot partition space insufficient, will abort installer instead of breaking your device
-
-### v2
-
-- Fix verity patch. It should now work on all devices (might fix some of the unable-to-boot issues)
-- All scripts will now run in selinux permissive mode for maximum compatibility (this will **NOT** turn your device to permissive)
-- Add Nougat Developer Preview 5 support
-- Add systemless host support for AdBlock Apps (enabled by default)
-- Add support for new root disable method
-- Remove sepolicy patches that uses SuperSU's supolicy tool; it is now using a minimal set of modifications
-- Removed Magisk Manager in Magisk patch, it is now included in Magisk phh's superuser only
+- Include updated open source sepolicy injection tool (source code available), support nearly all SuperSU is now included in Magisk phh's superuser only
 
 ### v1
 
